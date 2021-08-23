@@ -1,2 +1,2 @@
 # contactUs
-Projeto simples de envio de e-mail para contato com Node JS
+API simples com envio de e-mail genérico utilizando Nodemailer.
