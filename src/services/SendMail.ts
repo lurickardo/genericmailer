@@ -1,13 +1,8 @@
 import nodemailer from 'nodemailer'
 
 export default class sendMail {
-    async send (by: string | null, recipient: Array<string>, subject: string, content: string) {
-        return await nodemailer.createTestAccount((err, account) => {
-            if (err) {
-                process.exit(1);
-                throw err;
-            }
-            
+    async send (by: string | null, recipients: Array<string>, subject: string, content: string) {
+        try {
             const transporter = nodemailer.createTransport({
                 host: "smtp.gmail.com",
                 port: 587,
@@ -17,25 +12,23 @@ export default class sendMail {
                     pass: process.env.PASSWORD_MAIL
                 }
             })
-
-            transporter.verify(function (error) {
-                if (error) {
-                    console.log(error);
-                } else {
-                    console.log("E-mail enviado com sucesso!");
-                }
+    
+            transporter.verify((error) => {
+                if (error)
+                    return console.log(error);
+                return;
             })
-
+    
             const from = by !== null ? by : process.env.USER_MAIL;
-
-            transporter.sendMail({
+    
+            return await transporter.sendMail({
                 from: from,
-                to: recipient,
+                to: recipients,
                 subject: subject,
-                text: content
-            }).then(info => {
-                return info;
-            }).catch(error => { error.message })
-        })
+                html: content
+            })
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
