@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import { typeSendMail } from '../templateTypes/typeSendMail'
-import FormatEmailContactUs from '../templateMails/FormatEmailContactUs'
+import PatternMail from '../config/PatternMail'
 import SendMail from '../services/SendMail'
 
 export default class ContactUsController {
@@ -11,13 +11,15 @@ export default class ContactUsController {
 
       const sendMail = new SendMail();
 
-      const mailFormatted = FormatEmailContactUs.format(data) as string;
-
+      const templateMail = await PatternMail.generateTemplateMail(data);
+      console.log(templateMail);
+      
+      return response.status(200).json({ message: "E-mail enviado com sucesso!" })
       const recipients = [
         process.env.USER_MAIL,
       ] as Array<string>
 
-      await sendMail.send(data.by, recipients, `Email solicitando contato: ${data.subject}`, mailFormatted)
+      await sendMail.send(data.by, recipients, `Email solicitando contato: ${data.subject}`, 'templateMail')
 
       return response.status(200).json({ message: "E-mail enviado com sucesso!" })
     } catch (error) {
