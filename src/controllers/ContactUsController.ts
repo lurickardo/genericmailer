@@ -1,27 +1,28 @@
 import { Request, Response } from 'express'
 import { typeSendMail } from '../templateTypes/typeSendMail'
-import FormatEmailContactUs from '../templateMails/FormatEmailContactUs'
+import TemplateMail from '../config/TemplateMail'
 import SendMail from '../services/SendMail'
 
 export default class ContactUsController {
 
-  static async sendMailContactUs(request: Request, response: Response) {
+  public static async sendMailContactUs(request: Request, response: Response): Promise<Response> {
     try {
-      const data = request.body as typeSendMail;
+      const data = request.body as typeSendMail
 
-      const sendMail = new SendMail();
+      const sendMail = new SendMail()
 
-      const mailFormatted = FormatEmailContactUs.format(data) as string;
+      const templateMail = await TemplateMail.generateTemplateMail(data)
 
       const recipients = [
         process.env.USER_MAIL,
       ] as Array<string>
 
-      await sendMail.send(data.by, recipients, `Email solicitando contato: ${data.subject}`, mailFormatted)
+      await sendMail.send(data.by, recipients, `Solicitação de contato: ${data.name}`, templateMail, data.attachments)
 
       return response.status(200).json({ message: "E-mail enviado com sucesso!" })
-    } catch (error) {
-      return response.status(500).json({ message: `${error}` })
+    } catch (error: any) {
+      console.log(`Erro ao enviar e-mail: ${error}`);
+      return response.status(500).json({ message: `Erro ao enviar e-mail.` })
     }
   }
 }
