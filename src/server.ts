@@ -15,9 +15,9 @@ app.set("twig options", {
 
 dotenv.config()
 
-console.log('\x1b[33m-Starting servers --------------------');
+console.log('\x1b[33m-Starting servers --------------------')
 app.listen(process.env.PORT || 3333, () => {
-  console.log('\x1b[32m-Server express started on port 3333. \x1b[0m');
+  console.log('\x1b[32m-Server express started on port 3333. \x1b[0m')
 }).on('error', (error) => {
-  console.log(`\x1b[31m-Error connecting to Express server: ${error} \x1b[0m`);
+  console.log(`\x1b[31m-Error connecting to Express server: ${error} \x1b[0m`)
 })
