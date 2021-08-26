@@ -2,7 +2,7 @@
 ![logo genericmailer](https://user-images.githubusercontent.com/34722198/130988336-b4796230-c99b-4bd0-9043-b084af67d360.png)
 
 # Sobre o projeto:
-API feita para integração em sistemas que necessitam de um envio de e-mail genérico.
+Microsserviço feito para integração em sistemas que necessitam de um envio de e-mail genérico.
 
 # Dependências do projeto
 - Yarn
@@ -15,6 +15,7 @@ API feita para integração em sistemas que necessitam de um envio de e-mail gen
 - Express
 - Cors
 - Dotenv
+- Multer
 
 # Links úteis:
 - Yarn: https://yarnpkg.com/getting-started/install

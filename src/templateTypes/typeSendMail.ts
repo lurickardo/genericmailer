@@ -4,12 +4,11 @@ export type typeSendMail = {
     subject: string;
     phone?: string;
     content: string;
-    attachments?: attachmentsMail
 }
 
 export type attachmentsMail = [
     {
-        file: string,
+        filename: string,
         path: string
     }
 ]
