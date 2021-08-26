@@ -16,7 +16,7 @@ export default class sendMail {
 
             transporter.verify((error) => {
                 if (error)
-                    return console.log(error);
+                    return console.log(`Erro ao verificar transporte de e-mail: ${error}`);
                 return;
             })
 
@@ -30,7 +30,7 @@ export default class sendMail {
                 attachments: attachments
             })
         } catch (error) {
-            console.log(error);
+            console.log(`Erro Nodemailer ao enviar e-mail: ${error}`);
         }
     }
 }

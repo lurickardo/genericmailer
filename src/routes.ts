@@ -5,8 +5,8 @@ const routes = Router()
 
 routes.use('/api/', contactUsRoutes)
 
-routes.use(function (request: Request, response: Response) {
-    response.sendStatus(404);
-});
+routes.use((request: Request, response: Response) => {
+    response.sendStatus(404)
+})
 
 export default routes
