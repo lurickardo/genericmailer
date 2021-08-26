@@ -31,6 +31,7 @@ Instalando todas as bibliotecas apenas execute:
 ```bash
 yarn start
 ```
+Edite o arquivo `.env.example` inserindo seu e-mail em `USER_MAIL`, sua senha em `PASSWORD_MAIL` e modificando seu nome para apenas `.env`
 
 # Parabéns :star_struck:
 Agora basta ajustar a sua necessidade os inputs de dados e integrar em seu sistema.:rocket:
