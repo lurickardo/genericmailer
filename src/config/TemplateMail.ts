@@ -11,7 +11,7 @@ export default class templateMail {
                 })
             })
         } catch (error: any) {
-            console.log(`Error sending email: ${error}`)
+            console.log(`Erro ao gerar template de e-mail: ${error}`)
         }
     }
 }
