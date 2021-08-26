@@ -1,5 +1,6 @@
 /node_modules
-/tmp/attachments/*
+tmp/attachments/*
+!tmp/attachments/.gitkeep
 yarn-error.log
 yarn.lock
 .env
