@@ -17,7 +17,7 @@ export default class ContactUsController {
         process.env.USER_MAIL,
       ] as Array<string>
 
-      await sendMail.send(data.by, recipients, `Solicitação de contato: ${data.name}`, templateMail)
+      await sendMail.send(data.by, recipients, `Solicitação de contato: ${data.name}`, templateMail, data.attachments)
 
       return response.status(200).json({ message: "E-mail enviado com sucesso!" })
     } catch (error: any) {

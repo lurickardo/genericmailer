@@ -1,7 +1,8 @@
 import nodemailer, { SentMessageInfo } from 'nodemailer'
+import {attachmentsMail} from '../templateTypes/typeSendMail'
 
 export default class sendMail {
-    public async send(by: string | null, recipients: Array<string>, subject: string, content: string): Promise<SentMessageInfo> {
+    public async send(by: string | null, recipients: Array<string>, subject: string, content: string, attachments: attachmentsMail | undefined): Promise<SentMessageInfo> {
         try {
             const transporter = nodemailer.createTransport({
                 host: "smtp.gmail.com",
@@ -25,7 +26,8 @@ export default class sendMail {
                 from: from,
                 to: recipients,
                 subject: subject,
-                html: content
+                html: content,
+                attachments: attachments
             })
         } catch (error) {
             console.log(error);
