@@ -4,9 +4,9 @@ import TemplateMail from '../config/TemplateMail'
 import SendMail from '../services/SendMail'
 import Utils from '../helpers/Utils'
 
-export default class ContactUsController {
+export default class GenericController {
 
-  public static async sendMailContactUs(request: Request, response: Response): Promise<Response> {
+  public static async sendMailGeneric(request: Request, response: Response): Promise<Response> {
     try {
       const sendMail = new SendMail()
 
