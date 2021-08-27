@@ -1,5 +1,5 @@
 # Genericmailer
-![logo genericmailer](https://user-images.githubusercontent.com/34722198/130988336-b4796230-c99b-4bd0-9043-b084af67d360.png)
+![genericmailer-logo](https://user-images.githubusercontent.com/34722198/131162827-a1a09757-6583-4e2c-92f9-ba7a951d5ee8.png)
 
 # Sobre o projeto:
 Microsserviço feito para integração em sistemas que necessitam de um envio de e-mail genérico.
