@@ -1,9 +1,9 @@
 import { Router, Request, Response } from 'express'
-import contactUsRoutes from './routes/contactUsRoutes'
+import genericRoutes from './routes/genericRoutes'
 
 const routes = Router()
 
-routes.use('/api/', contactUsRoutes)
+routes.use('/api/', genericRoutes)
 
 routes.use((request: Request, response: Response) => {
     response.sendStatus(404)
