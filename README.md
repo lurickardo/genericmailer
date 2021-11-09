@@ -2,7 +2,7 @@
 ![genericmailer-logo](https://user-images.githubusercontent.com/34722198/131162827-a1a09757-6583-4e2c-92f9-ba7a951d5ee8.png)
 
 # Sobre o projeto:
-Microsserviço feito para integração em sistemas que necessitam de um envio de e-mail genérico.
+API feita para integração em sistemas que necessitam de um envio de e-mail genérico.
 
 # Dependências do projeto
 - Yarn
