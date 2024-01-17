@@ -1,6 +1,8 @@
 /node_modules
+/coverage
 tmp/attachments/*
 !tmp/attachments/.gitkeep
 yarn-error.log
 yarn.lock
 .env
+package-lock.json

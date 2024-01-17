@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "lint": "time eslint ./src/**/*.ts",
-    "lint:fix": "time eslint --fix ./src/**/*.ts"
+    "lint": "time eslint --fix ./src/**/*.ts",
+    "lint:check": "time eslint ./src/**/*.ts"
   },
   "dependencies": {
     "cors": "^2.8.5",
