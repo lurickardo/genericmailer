@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "lint": "npx @biomejs/biome format ./src --write",
-    "lint:check": "npx @biomejs/biome check ./src"
+    "lint": "time npx @biomejs/biome format ./src --write",
+    "lint:check": "time npx @biomejs/biome check ./src"
   },
   "dependencies": {
     "cors": "^2.8.5",
